@@ -1,24 +1,4 @@
 # vue3_test
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## pre condition
+vue3 need node version>=12.0.0,we choose [v12.22.4](https://nodejs.org/en/blog/release/v12.22.4/)
