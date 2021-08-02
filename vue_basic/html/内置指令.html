@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+	<style type="text/css">
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<!-- 
+			vue 提供的指令：
+
+			v-bind	:单项绑定数据，简写为:
+			v-model	:双向绑定数据
+			v-for	:遍历数组、对象、字符串
+			v-on	:绑定事件监听，简写为@
+			v-if	:条件渲染（动态控制节点是否存在）
+			v-else	:条件渲染（动态控制节点是否存在）
+			v-show	:条件渲染（动态控制节点是否显示）
+			v-text	:插入文本内容
+			v-html  :插入文本及标签内容，能解析标签比较危险
+			v-cloak	:没有值，本质就是一个属性，主要配合样式使用，vue实例创建完成后会删除该属性
+			v-once	:没有值，值执行一次
+			v-pre	:vue不解析加了v-pre的标签
+		 -->
+		 <h2 v-cloak>hello {{name}}</h2>
+
+		 <p v-once>初始化的n值：{{n}}</p>
+		 <p>初始化的n值：{{n}}</p>
+		 <button @click="n++">点击加一</button>
+
+		 <p v-pre>不需要vue解析的文本用v-pre</p>
+	</div>
+
+</body>
+<script type="text/javascript">
+	const vm=new Vue({
+		el:'#root',
+		data:{
+			name:'tom',
+			n:1
+		}
+	})
+</script>
+</html>

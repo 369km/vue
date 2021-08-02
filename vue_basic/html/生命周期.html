@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		 <h2 :style="{opacity:opacity}">welcome to study vue</h2>
+	</div>
+
+</body>
+<script type="text/javascript">
+	Vue.config.productionTip=false
+
+	new Vue({
+		el:'#root',
+		data:{
+			opacity:1
+		},
+		mounted(){
+			// 定时器
+			setInterval(()=>{
+				this.opacity-=0.01
+				if (this.opacity<=0.1) {
+					this.opacity=1
+				}
+			},16)
+		}
+	})
+</script>
+</html>

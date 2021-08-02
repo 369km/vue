@@ -1,0 +1,72 @@
+<template>
+  <li>
+    <label>
+      <input type="checkbox" :checked="l.done" @change="handleCheck(l.id)">
+      <span>{{ l.title.slice(0,29) }}</span>
+    </label>
+    <button class="btn btn-danger" @click="handleDelete(l.id)">删除</button>
+  </li>
+</template>
+
+<script>
+
+export default {
+  name: 'MiddleListItem',
+  methods: {
+    handleCheck(id) {
+      this.changeItem(id)
+    },
+    handleDelete(id) {
+      if (confirm("确定删除吗？")) {
+        this.deleteItem(id)
+      }
+    }
+  },
+  props: ['l', 'changeItem', 'deleteItem']
+}
+</script>
+
+<style scoped>
+li {
+  list-style: none;
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+li label {
+  float: left;
+  cursor: pointer;
+}
+
+li label li input {
+  vertical-align: middle;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
+
+li button {
+  float: right;
+  display: none;
+  margin-top: 3px;
+  margin-right: 1px;
+}
+
+li:before {
+  content: initial;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #ddd;
+}
+
+li:hover button {
+  display: block;
+}
+</style>

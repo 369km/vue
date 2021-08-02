@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+	<div id="root">
+		<h2>welcome to {{address}}</h2>
+		<!-- vue中键盘事件的别名
+			 enter 回车
+			 delete 删除
+			 esc 退出
+			 space 空格
+			 tab 换行 特殊要配合@keydown使用
+			 up 上
+			 down 下
+			 left 左
+			 right 右
+		 -->
+		 <!-- 修饰符可以了连着写 @keyup.ctrl.y,当ctrl和y一起组合时才有效果-->
+		<input type="text" placeholder="按下回车提升输入" @keyup.enter="showInfo">
+		<input type="text" placeholder="按下回车提升输入" @keyup.huiche="showInfo2">
+	</div>
+</body>
+<script type="text/javascript">
+	Vue.config.keyCodes.huiche=13//自定义一个回车键别名
+	const vm=new Vue({
+		el:'#root',
+		data:{
+			address:'重庆'
+		},
+		methods:{
+			showInfo(event){
+				console.log(event.key)
+				console.log(event.target.value)
+			},
+			showInfo2(event){
+				console.log(event.key)
+				console.log(event.target.value)
+			}
+		}
+	})
+</script>
+</html>

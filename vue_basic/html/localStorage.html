@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+<div id="root">
+    <h2>浏览器本地存储</h2>
+    <button onclick="saveData()">保存</button>
+    <button onclick="readData()">查看</button>
+    <button onclick="deleteData()">删除</button>
+</div>
+</body>
+<script type="text/javascript">
+    function saveData(){
+        let person={
+            "name":"foo",
+            "age":18
+        }
+        localStorage.setItem("person",JSON.stringify(person))
+    }
+    function readData(){
+        const person=localStorage.getItem("person")
+        alert(JSON.stringify(person))
+    }
+    function deleteData(){
+        localStorage.removeItem("person")
+    }
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+	<div id="root">
+		<h2>welcome to {{addaress}}</h2>
+		<button @click="showInfo">点我提示,不传参数</button>
+		<button @click="showInfo2($event,66)">点我提示，传参数</button>
+		<!-- @click.prevent事件修饰符 -->
+		<!-- prevent 阻止默认事件
+			 stop 阻止事件冒泡
+			 once 事件只触发一次
+		-->
+		<a href="http://www.baidu.com" @click.prevent="showInfo">点我提示</a>
+	</div>
+</body>
+<script type="text/javascript">
+	const vm=new Vue({
+		el:'#root',
+		data:{
+			address:'重庆'
+		},
+		methods:{
+			showInfo(event){
+				console.log(event)
+				console.log(this)
+				alert("传送门")
+			},
+			showInfo2(even,number){
+				console.log(event)
+				console.log(number)
+			}
+		}
+	})
+</script>
+</html>

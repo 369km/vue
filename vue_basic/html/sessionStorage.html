@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<div id="root">
+    <h2>浏览器会话存储</h2>
+    <button onclick="saveData()">保存</button>
+    <button onclick="readData()">查看</button>
+    <button onclick="deleteData()">删除</button>
+</div>
+</body>
+<script type="text/javascript">
+    function saveData(){
+        let person={
+            "name":"foo",
+            "age":18
+        }
+        sessionStorage.setItem("person",JSON.stringify(person))
+    }
+    function readData(){
+        const person=sessionStorage.getItem("person")
+        alert(JSON.stringify(person))
+    }
+    function deleteData(){
+        sessionStorage.removeItem("person")
+    }
+</script>
+</html>

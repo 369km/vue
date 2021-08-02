@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="../js/vue.min.js"></script>
+</head>
+<body>
+	<div id="root">
+		<h2 v-show="false">welcome to {{address}}</h2>
+		<h2 v-if="false">welcome to {{address}}</h2>
+		<h2 v-show="true">welcome to {{address}}</h2>
+
+		<template v-if=true>
+			<h2>welcome to {{address}}</h2>
+			<h2>welcome to {{address}}</h2>
+		</template>
+	</div>
+
+</body>
+<script type="text/javascript">
+	const vm=new Vue({
+		el:'#root',
+		data:{
+			address:'重庆'
+		}
+	})
+</script>
+</html>
